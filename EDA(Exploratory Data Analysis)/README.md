@@ -32,4 +32,6 @@ We have 5 different .CSV format files and we'll explore them one by one.
 df_bookings = pd.read_csv('data/fact_bookings.csv')
 df_bookings.head(4)
 ```
-![Data head](/images/1.df_booking_head.png)
+![Data head](./images/1.df_booking_head.png)
+\images
+
