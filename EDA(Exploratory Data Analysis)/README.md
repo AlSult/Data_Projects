@@ -57,4 +57,24 @@ df_bookings.revenue_generated.min(), df_bookings.revenue_generated.max()
 ```
 ![Data cleaning](./images/4.df_booking_revenue.png)
 
+For fixing the outlier issues I am using the standard deviation to detect the lower and higher limits. 
+On the table below we can see all the huge numbers for the 'revenue_generated' column which is non-realistic, 
+because no one will pay that much for one-night stay.
+```
+#if the value is more than this it's considered as an outlier
+higher_limit = avg + 3*std
+higher_limit
+
+#checking the negative values to detect the higher_limits
+df_bookings[df_bookings.revenue_generated>higher_limit]
+```
+![Data cleaning](./images/5.df_booking_higher_limit.png)
+
+Below I checked the total null values in the dataset and only the 'ratings_given' column has such values. 
+In this case I didn't assume this as the error because in reality not every single guest is leaving a rating.
+```
+#handling NA values
+df_bookings.isnull().sum()
+```
+![Data cleaning](./images/6.df_bookings_NA.png)
 
