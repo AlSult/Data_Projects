@@ -6,8 +6,8 @@ Data science is having a huge impact on the medical field, specifically in the a
 1. [Project Overview](#ch1)
 1. [EDA Definition and Steps](#ch2)
 1. [Step 1: Data Exploration and Cleaning](#ch3)
-1. [Step 2: Head and describe](#ch4)
-1. [Step 3: Target distribution](#ch5)
+1. [Step 2: Data Transformation](#ch4)
+1. [Step 3: Data Insights](#ch5)
 1. [Step 4: Features distribution](#ch6)
 1. [Step 5: Correlation matrix](#ch7)
 1. [Step 6: Positive correlated features](#ch8)
@@ -19,14 +19,19 @@ Data science is having a huge impact on the medical field, specifically in the a
 
 <a id="ch1"></a>
 # Project Overview
-
-# **Project Summary from Kaggle:**
-
+On this project the data from different booking websites is represented. 
+I performed a comprehensive data analysis for AtliQ Grands using Python.
+# **Project Summary:**
+AtliQ Grands is a prominent hospitality group operating a chain of five-star hotels across major Indian cities, 
+including Delhi, Mumbai, Hyderabad, and Bangalore. With over 20 years in the industry, the company offers 
+a diverse portfolio of properties such as AtliQ Seasons, AtliQ Exotica, AtliQ Bay, and AtliQ Palace.
 # Attribute information:
 
 <a id="ch3"></a>
 # Step 1: Data Exploration and Cleaning
-We have 5 different .CSV format files and we'll explore them one by one.
+We have 5 different .CSV format files and we'll explore them one by one. 
+Using the example of the fact_booking.csv dataset, I demonstrated the process of data exploration and cleaning. 
+The handling and analysis of the other datasets are detailed in the accompanying code file. 
 ```
 #Read data
 df_bookings = pd.read_csv('data/fact_bookings.csv')
@@ -77,4 +82,40 @@ In this case I didn't assume this as the error because in reality not every sing
 df_bookings.isnull().sum()
 ```
 ![Data cleaning](./images/6.df_bookings_NA.png)
+
+<a id="ch4"></a>
+# Step 2: Data Transformation
+In this step, I demonstrated how I added an additional column for occupancy percentage using the 
+fact_aggregated_bookings.csv dataset. 
+The occupancy percentage was calculated by dividing the number of successful bookings by the total capacity.
+```
+#new column for the occupancy percentage
+df_agg_bookings.loc[:, 'occ_pct'] = df_agg_bookings['successful_bookings'] / df_agg_bookings['capacity']
+
+#occupancy in percent form
+df_agg_bookings.loc[:, 'occ_pct'] = df_agg_bookings['occ_pct'].apply(lambda x: round(x*100, 2))
+df_agg_bookings.head(3)
+```
+![Data transformation](./images/7.occ_ptg.png)
+
+<a id="ch5"></a>
+# Step 3: Data Insights
+avg_occ by city image
+ Insight: Delhi stands out with the highest average room occupancy at 61.6%, noticeably higher than other cities. Bangalore is at the lower end with 56.6%.
+
+🎯 Recommendation: Consider diving into what's driving Delhi’s stronger performance — location demand, pricing strategy, events — and explore whether similar tactics can be applied in other cities.
+
+5. Time Trends: Check-in Date, Week Number, and Day Type
+Insight: Analyzing how occupancy and successful bookings change over time (e.g., over weeks, days of the week, or by specific dates) will uncover seasonal trends and peak booking periods.
+
+Analysis:
+
+Calculate average occ_pct and successful_bookings for each week_no, or break down by day_type (weekday vs. weekend).
+
+Visualization:
+
+Line Chart to show trends over time (week_no or check-in date).
+
+Donut Chart or Bar Chart to compare weekday and weekend occupancy.
+
 
