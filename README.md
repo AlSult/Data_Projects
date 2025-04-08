@@ -4,7 +4,7 @@
 
 In this repository I put together all my projects related to the data science .
 
-1.[EDA (Exploratory data Analysis)](here should be the link)
+1.[EDA (Exploratory data Analysis)]([here should be the link](https://github.com/AlSult/Data_Projects/blob/main/EDA(Exploratory%20Data%20Analysis)/README.md)
 2.[Prediction (Regression)](here should be the link)
 3.[Prediction (Classification)](here should be the link)
 4.[Cluster analysis (unclassified data)](here should be the link)
