@@ -1,21 +1,8 @@
-![Exploratory data analysis in Hospitality Domain](/images/0.jpg)
-
-Data science is having a huge impact on the medical field, specifically in the area of cancer studies. In this project I will work with breast cancer data. This project focuses on data analysis using a simple step-by-step explanation.
-
 # Table of Contents
 1. [Project Overview](#ch1)
-1. [EDA Definition and Steps](#ch2)
 1. [Step 1: Data Exploration and Cleaning](#ch3)
 1. [Step 2: Data Transformation](#ch4)
 1. [Step 3: Data Insights](#ch5)
-1. [Step 4: Features distribution](#ch6)
-1. [Step 5: Correlation matrix](#ch7)
-1. [Step 6: Positive correlated features](#ch8)
-1. [Step 7: Uncorrelated features](#ch9)
-1. [Step 8: Negative correlated features](#ch10)
-
-1. [References](#ch90)
-
 
 <a id="ch1"></a>
 # Project Overview
@@ -100,22 +87,11 @@ df_agg_bookings.head(3)
 
 <a id="ch5"></a>
 # Step 3: Data Insights
-avg_occ by city image
- Insight: Delhi stands out with the highest average room occupancy at 61.6%, noticeably higher than other cities. Bangalore is at the lower end with 56.6%.
-
-🎯 Recommendation: Consider diving into what's driving Delhi’s stronger performance — location demand, pricing strategy, events — and explore whether similar tactics can be applied in other cities.
-
-5. Time Trends: Check-in Date, Week Number, and Day Type
-Insight: Analyzing how occupancy and successful bookings change over time (e.g., over weeks, days of the week, or by specific dates) will uncover seasonal trends and peak booking periods.
-
-Analysis:
-
-Calculate average occ_pct and successful_bookings for each week_no, or break down by day_type (weekday vs. weekend).
-
-Visualization:
-
-Line Chart to show trends over time (week_no or check-in date).
-
-Donut Chart or Bar Chart to compare weekday and weekend occupancy.
-
-
+![Data insights](./images/8.booking count.png)
+![Data insights](./images/9.avg_occ_rate.png)
+![Data insights](./images/10.avg_room_occ.png)
+![Data insights](./images/11.avg_occ_daytype.png)
+![Data insights](./images/12.occ_trends_byweek.png)
+![Data insights](./images/13.occ_daytype.png)
+![Data insights](./images/14.total_capacity.png)
+![Data insights](./images/correlation matrix.png)
