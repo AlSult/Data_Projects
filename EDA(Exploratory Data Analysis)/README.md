@@ -87,7 +87,7 @@ df_agg_bookings.head(3)
 
 <a id="ch5"></a>
 # Step 3: Data Insights
-![Data insights](./images/8.booking count.png)
+![Data insights](./images/8.booking_count.png)
 ![Data insights](./images/9.avg_occ_rate.png)
 ![Data insights](./images/10.avg_room_occ.png)
 ![Data insights](./images/11.avg_occ_daytype.png)
